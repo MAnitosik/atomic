@@ -15,6 +15,7 @@ cp -avf "/ctx/system_files"/. /
 # this installs a package from fedora repos
 dnf5 install -y sway-config-fedora sway-systemd qt5-qtwayland qt5-qtbase-gui qt6-qtwayland qt6-qtbase-gui foot libnotify rofi-wayland xdg-user-dirs
 dnf5 install -y firefox network-manager-applet NetworkManager light imv swaylock waybar rofi dunst kanshi thunar
+dnf5 install -y toolbox podman
 
 # Use a COPR Example:
 #
