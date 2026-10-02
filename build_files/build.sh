@@ -22,15 +22,6 @@ dnf5 install -y firefox network-manager-applet NetworkManager light imv swaylock
 # dnf5 -y install package
 # Disable COPRs so they don't end up enabled on the final image:
 # dnf5 -y copr disable ublue-os/staging
-dnf5 -y copr enable bieszczaders/kernel-cachyos-lto
-dnf5 -y install kernel-cachyos-lto kernel-cachyos-lto-devel-matched
-setsebool -P domain_kernel_load_modules on
-dnf5 -y install libdnf5-plugin-actions
-mkdir -p /etc/dnf/libdnf5-plugins/actions.d
-tee /etc/dnf/libdnf5-plugins/actions.d/cachy-default.actions << 'EOF'
-# After installing any kernel* package, set the latest CachyOS kernel as the default boot entry
-post_transaction:kernel*:in::/usr/bin/sh -c /usr/bin/grubby\ --set-default=/boot/$(ls\ /boot\ |\ grep\ vmlinuz.*cachy\ |\ sort\ -V\ |\ tail\ -1)
-EOF
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y swap zram-generator-defaults cachyos-settings
 dracut -f
