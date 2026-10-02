@@ -27,8 +27,8 @@ dnf5 -y swap zram-generator-defaults cachyos-settings
 dnf5 -y install scx-scheds scx-tools
 dnf5 -y install scx-manager
 dnf5 -y install ananicy-cpp
-systemctl enable ananicy-cpp
 
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+systemctl enable ananicy-cpp
