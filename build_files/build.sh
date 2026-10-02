@@ -24,7 +24,6 @@ dnf5 install -y firefox network-manager-applet NetworkManager light imv swaylock
 # dnf5 -y copr disable ublue-os/staging
 dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
 dnf5 -y swap zram-generator-defaults cachyos-settings
-dracut -f
 dnf5 -y install scx-scheds scx-tools
 dnf5 -y install scx-manager
 dnf5 -y install ananicy-cpp
