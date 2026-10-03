@@ -13,7 +13,6 @@ cp -avf "/ctx/system_files"/. /
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/43/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-setenforce 0
 dnf5 install -y toolbox podman buildah flatpak rpm-ostree ostree
 dnf5 install -y @cosmic-desktop-environment
 dnf5 install -y dnf-plugins-core
